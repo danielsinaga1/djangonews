@@ -25,7 +25,8 @@ SECRET_KEY = 't4yz%ma(w55m5xz)zm^796l&!^jk36qwey3mc3u^mpb=3@_$qm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+TEMPLATE_DEBUG = DEBUG
+ALLOWED_HOSTS = ['www.reks174.pythonanywhere.com','reks174.pythonanywhere.com']
 
 
 # Application definition
@@ -37,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'signups',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -118,3 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(BASE_DIR), "static","templates"),
+)
