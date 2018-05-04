@@ -1,4 +1,4 @@
-"""belajardjango URL Configuration
+"""belajardjangqo URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -17,6 +17,7 @@ from django.conf.urls import url, patterns, include
 from django.contrib import admin
 admin.autodiscover()
 urlpatterns = patterns('',
+    url(r'^$', 'signups.views.home', name = 'home'),
     url(r'^admin/', include(admin.site.urls)),
 
 )

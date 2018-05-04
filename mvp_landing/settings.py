@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import os.path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,12 +52,12 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'belajardjango.urls'
+ROOT_URLCONF = 'mvp_landing.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'belajardjango.wsgi.application'
+WSGI_APPLICATION = 'mvp_landing.wsgi.application'
 
 
 # Database
@@ -102,6 +103,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+PIWIK_SITE_ID = 1
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -121,6 +126,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(BASE_DIR), "static","templates"),
+TEMPLATES_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
 )
